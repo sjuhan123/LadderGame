@@ -5,10 +5,10 @@
 
 // const process = require('process');
 
-// const args = process.argv;
+// const argv = process.argv;
 
-// if( args[2] > 2 && args[2] < 8 ){
-//     console.log(`3번 째 요소 인수 값: + ${args[2]}`);
+// if( argv[2] > 2 && argv[2] < 8 ){
+//     console.log(`3번 째 요소 인수 값: + ${argv[2]}`);
 // }
 
 
@@ -22,12 +22,12 @@
 
 const process = require('process');
 
-const args = process.argv;
+const argv = process.argv;
 
-const ladderHeight = args[2];
-const numberOfParticipants = args[3];
+const ladderHeight = argv[2];
+const numberOfParticipants = argv[3];
 
-function slashOrblank(){
+function eitherSlashOrblank(){
     const randomNumber = Math.random() * 10;
     const roundNumber = Math.round(randomNumber);
 
@@ -47,7 +47,7 @@ function printLadderIn2DArray(heigth, length){
             if( j === 0 ){
                 cells.push('|');
             } else if( j % 2 === 1){
-                cells.push(slashOrblank());
+                cells.push(eitherSlashOrblank());
             } else {
                 cells.push('|');
             }
@@ -67,6 +67,6 @@ function printLadder(height, participants){
     }
 }
 
-const answer = printLadder(ladderHeight, numberOfParticipants);
-console.log(answer);
+printLadder(ladderHeight, numberOfParticipants);
+
 
